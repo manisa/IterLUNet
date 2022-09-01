@@ -1,4 +1,4 @@
-## IterLUnet: Deep Learning Architecture FOR PIXEL-WISE CRACK DETECTION IN LEVEE SYSTEMS 
+## IterLUnet: Deep Learning Architecture for Pixel-Wise Crack Detection in Levee Systems
 
 ## Getting Started
 
@@ -31,15 +31,26 @@ source installPackages.sh
 
 ```
 
+## Folder Structure
+```
+IterLUNet/
+    archs/
+    lib/
+    src/
+    notebooks/
+    dataset/
+
+```
+
 ## Download datasets
 - Go to [this link](https://drive.google.com/file/d/1Jk6VLWVBTBfVPI0jbxuftNDFLEVfqsXs/view?usp=sharing).
-- Click on **LeveeCrack_dataset.zip**. This will automatically download the datasets used to to perform 10FCV.
-- Unzip and copy all the datasets from **LeveeCrack_dataset** directory into the folder **LeveeCrack_dataset** inside the root folder **IterLUNet**.
+- Click on **dataset.zip**. This will automatically download the datasets used to to perform 10FCV.
+- Unzip and copy all the datasets from **dataset** directory into the folder **dataset** inside the root folder **IterLUNet**.
 - Your directory structure should look like this:
 
 ```
 IterLUNet/
-    LeveeCrack_dataset/
+    dataset/
     	train/
         	images/
         	masks/
@@ -47,15 +58,7 @@ IterLUNet/
         	images/
         	masks/
 ```
-## Folder Structure
-```
-IterLUNet/
-    archs/
-    lib/
-    src/
-    LeveeCrack_dataset/
 
-```
 
 ## Training
 - To replicate the training procedure, follow following command line.
