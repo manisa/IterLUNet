@@ -34,14 +34,18 @@ source installPackages.sh
 ## Download datasets
 - Go to [this link](https://drive.google.com/file/d/1Jk6VLWVBTBfVPI0jbxuftNDFLEVfqsXs/view?usp=sharing).
 - Click on **LeveeCrack_dataset.zip**. This will automatically download the datasets used to to perform 10FCV.
-- Unzip and copy all the datasets from **LeveeCrack_dataset** directory into the folder **LeveeCrack_dataset** inside the root folder **IGARSS2022_LeveeCrackDetection**.
+- Unzip and copy all the datasets from **LeveeCrack_dataset** directory into the folder **LeveeCrack_dataset** inside the root folder **IterLUNet**.
 - Your directory structure should look like this:
 
 ```
 IterLUNet/
     LeveeCrack_dataset/
-        images/
-        masks/
+    	train/
+        	images/
+        	masks/
+        test/
+        	images/
+        	masks/
 ```
 ## Folder Structure
 ```
