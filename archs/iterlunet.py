@@ -196,7 +196,7 @@ def IterLUNet(input_filters, height, width, n_channels):
 
 
 
-	# iteration 3
+	# Iteration 3
 	encoder3 = initial_conv2d_bn(inputs, filters*2, 3, 3, padding='same', activation='relu')
 	inter3 = concatenate([encoder3, level2], axis=3)
 	inter3 = depthwise_convblock(inter3, filters*2, 3,3, depth_multiplier=1, SE=True)
