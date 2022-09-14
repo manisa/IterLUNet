@@ -41,7 +41,7 @@ IterLUNet/
 ```
 
 ## Download datasets
-- Experiment 1 [train data](https://drive.google.com/file/d/1Jk6VLWVBTBfVPI0jbxuftNDFLEVfqsXs/view?usp=sharing) and t[test data](https://cs.uno.edu/~mpanta1/IterLUNet/datasets/exp_1_test)
+- Experiment 1 [train data](https://drive.google.com/file/d/1Jk6VLWVBTBfVPI0jbxuftNDFLEVfqsXs/view?usp=sharing) and [test data](https://cs.uno.edu/~mpanta1/IterLUNet/datasets/exp_1_test)
 - Experiment 2 [train and validation data](https://cs.uno.edu/~mpanta1/IterLUNet/datasets/train_valid_data.zip) and [test_data](https://cs.uno.edu/~mpanta1/IterLUNet/datasets/exp_2_test.zip)
 - Unzip and copy dataset from the respecitve experiment into the folder **dataset** inside the root folder **IterLUNet**.
 - Your directory structure should look like this:
@@ -74,7 +74,7 @@ IterLUNet/
 - To replicate the training procedure, follow following command line.
 ```
 cd src
-python train.py
+python train.py --model_type=iterlunet --input_filters=64 --lr=1e-4 --loss_function='dice_loss' --model_path='./models/iterlunet'  --train_valid_path='./datasets/train/'
 
 ```
 
