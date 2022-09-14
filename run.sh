@@ -1,0 +1,1 @@
+python train.py --model_type=iterlunet --input_filters=64 --lr=1e-4 --loss_function='dice_loss' --model_path='./models/iterlunet'  --train_valid_path='/home/mpanta1/workspace/deeplearning/image_segmentation/unet_architecture/IEEEAccess_code_test/ImageSegmentationDataPreparation/src/datasets/augmented_levee_crack_data/train/'
