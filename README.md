@@ -34,18 +34,16 @@ source installPackages.sh
 ## Folder Structure
 ```
 IterLUNet/
-    archs/
-    lib/
-    src/
-    notebooks/
-    dataset/
-
+        archs/
+        lib/
+        dataset/
+        models/
 ```
 
 ## Download datasets
-- Go to [this link](https://drive.google.com/file/d/1Jk6VLWVBTBfVPI0jbxuftNDFLEVfqsXs/view?usp=sharing).
-- Click on **dataset.zip**. This will automatically download the datasets used to to perform 10FCV.
-- Unzip and copy all the datasets from **dataset** directory into the folder **dataset** inside the root folder **IterLUNet**.
+- Experiment 1 [train data](https://drive.google.com/file/d/1Jk6VLWVBTBfVPI0jbxuftNDFLEVfqsXs/view?usp=sharing) and t[test data](https://cs.uno.edu/~mpanta1/IterLUNet/datasets/exp_1_test)
+- Experiment 2 [train and validation data](https://cs.uno.edu/~mpanta1/IterLUNet/datasets/train_valid_data.zip) and [test_data](https://cs.uno.edu/~mpanta1/IterLUNet/datasets/exp_2_test.zip)
+- Unzip and copy dataset from the respecitve experiment into the folder **dataset** inside the root folder **IterLUNet**.
 - Your directory structure should look like this:
 
 ```
@@ -59,12 +57,24 @@ IterLUNet/
         	masks/
 ```
 
+## Download trained models
+- [Best performing trained models from 10-Fold CV Experiment](https://cs.uno.edu/~mpanta1/IterLUNet/models/exp_1_models.zip)
+- [Experiment 2 best performing trained models over 80 epochs](https://cs.uno.edu/~mpanta1/IterLUNet/models/exp_2_models.zip)
+- Unzip and copy models from respective experiment to **models** inside the root folder **IterLUNet**.
+- Your directory structure should look like this:
+
+```
+IterLUNet/
+    models/
+        experiment_1/
+        experiment_2/
+```
 
 ## Training
 - To replicate the training procedure, follow following command line.
 ```
 cd src
-python 10FCV_train_iterlunet.py
+python train.py
 
 ```
 
