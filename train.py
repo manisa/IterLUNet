@@ -89,8 +89,8 @@ def compile_and_train_model(config, X, y):
 	print('Fitting model...')
 	history = model.fit(X_train, y_train, batch_size=config.batch_size, epochs=config.num_epochs, callbacks=callbacks, validation_data=(X_valid, y_valid), verbose=1)
 	tf.keras.backend.clear_session()
-	plot_loss_dice_history(history, config.model_path)
-	plot_dice_jacc_history(history, config.model_path)
+	plot_loss_dice_history(history, config.model_type)
+	plot_dice_jacc_history(history, config.model_type)
 
 	print(f'==================Model {config.model_type} training completed====================')
 	tf.keras.backend.clear_session()
