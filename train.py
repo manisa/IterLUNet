@@ -1,5 +1,6 @@
 import os
 import argparse
+import atexit
 #os.environ["CUDA_VISIBLE_DEVICES"]="1"
 from lib.metrics import jaccard, dice_coef, dice_loss, create_dir
 from lib.load_data import get_data
@@ -94,6 +95,7 @@ def compile_and_train_model(config, X, y):
 
 	print(f'==================Model {config.model_type} training completed====================')
 	tf.keras.backend.clear_session()
+	atexit.register(strategy._extended._collective_ops._pool.close)
 	
 
 def main(config):
@@ -106,6 +108,7 @@ def main(config):
 	# Create directories if not exist
 	create_dir(config.model_path)
 	create_dir(config.result_path)
+	create_dir(config.graph_path)
 	config.result_path = os.path.join(config.result_path,config.model_type)
 	create_dir(config.result_path)
 	print(config)
@@ -144,6 +147,8 @@ if __name__ == '__main__':
 
 	parser.add_argument('--model_type', type=str, default='iterlunet', help='unet/multiresunet/attentionunet/nestedunet/iterlunet')
 	parser.add_argument('--model_path', type=str, default='./models/iterlunet')
+	parser.add_argument('--graph_path', type=str, default='./results/metric_graphs')
+
 	parser.add_argument('--train_valid_path', type=str, default='./dataset/experiment_2/train')
 	parser.add_argument('--test_path', type=str, default='./dataset/experiment_2/test/')
 	parser.add_argument('--valid_perc', type=float, default=0.15)
