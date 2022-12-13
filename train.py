@@ -163,7 +163,7 @@ if __name__ == '__main__':
 	parser.add_argument('--graph_path', type=str, default='./models/focal_tversky_loss_metric_graphs')
 	parser.add_argument('--result_path', type=str, default='./results/')
 
-	parser.add_argument('--train_valid_path', type=str, default='./datasets/experiment_3/levee_augmented_IEEEAccessData/')
+	parser.add_argument('--train_valid_path', type=str, default='./datasets/experiment_3/train/')
 	parser.add_argument('--test_path', type=str, default='./datasets/experiment_3/test/')
 	parser.add_argument('--valid_perc', type=float, default=0.2)
 	

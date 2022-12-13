@@ -34,12 +34,12 @@ source installPackages.sh
 ## Folder Structure
 ```
 IterLUNet/
-        archs/
-        lib/
-        dataset/
-            experiment_3/
-        models/
-            experiment_3/
+	archs/
+	lib/
+	dataset/
+		experiment_3/
+	models/
+		experiment_3/
 ```
 
 ## Download datasets
@@ -51,14 +51,14 @@ IterLUNet/
 
 ```
 IterLUNet/
-    dataset/
-        experiment_3/
-        	train/
-            	images/
-            	masks/
-            test/
-            	images/
-            	masks/
+	dataset/
+		experiment_3/
+			train/
+				images/
+				masks/
+			test/
+				images/
+				masks/
 ```
 
 ## Download trained models
@@ -70,17 +70,17 @@ IterLUNet/
 
 ```
 IterLUNet/
-    models/
-        experiment_1/
-        experiment_2/
-        experiment_3/
+	models/
+		experiment_1/
+		experiment_2/
+		experiment_3/
 ```
 
 ## Training
 - To replicate the training procedure, follow following command line.
 ```
 cd src
-python train.py --model_type=iterlunet --input_filters=64 --lr=2e-3 --loss_function='focal_tversky_loss' --model_path='./models/iterlunet'  --train_valid_path='./datasets/experiment_3/levee_augmented_IEEEAccessData/'
+python train.py --model_type=iterlunet --input_filters=64 --lr=2e-3 --loss_function='focal_tversky_loss' --model_path='./models/iterlunet'  --train_valid_path='./datasets/experiment_3/train/'
 
 ```
 
