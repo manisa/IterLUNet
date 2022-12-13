@@ -13,6 +13,7 @@ predictions/
 results/
 drafts/
 notebooks/
+lib/evaluateAll.py
 
 # Distribution / packaging
 .Python

@@ -10,18 +10,18 @@ def plot_loss_dice_history(history, experiment_name, graph_path):
     Plots model training history 
     """
 
-    fig, (ax_loss, ax_acc) = plt.subplots(1, 2, figsize=(20,10))
+    fig, (ax_loss, ax_acc) = plt.subplots(1, 2, figsize=(32,16))
     ax_loss.plot(history.epoch, history.history["loss"], label="train loss")
     ax_loss.plot(history.epoch, history.history["val_loss"], label="validation loss")
     ax_loss.legend()
     
-    ax_acc.plot(history.epoch, history.history["dice_coef"], label="train dice_coef")
-    ax_acc.plot(history.epoch, history.history["val_dice_coef"], label="validation dice_coef")
+    ax_acc.plot(history.epoch, history.history["tversky"], label="train tversky")
+    ax_acc.plot(history.epoch, history.history["val_tversky"], label="validation tversky")
     ax_acc.legend()
-    
+
     #fig.tight_layout()
-    plt.suptitle('Dice loss and Dice_coeff graphs for ' + str(experiment_name), fontweight='regular', fontsize=30)
-    plt.savefig(graph_path + '/' + str(experiment_name) + '_loss_dice' + '.png', format='png', dpi = 300)
+    plt.suptitle('Tversky loss and Tversky For ' + str(experiment_name), fontweight='regular', fontsize=34)
+    plt.savefig(graph_path + '/' + str(experiment_name) + '_loss_dice' + '.png', format='png', dpi = 200)
     plt.close()
     return("DONE!")
     
@@ -30,9 +30,9 @@ def plot_dice_jacc_history(history, experiment_name, graph_path):
     """
     Plots model training history 
     """
-    fig, (ax_dice, ax_jacc) = plt.subplots(1, 2, figsize=(20,10))
-    ax_dice.plot(history.epoch, history.history["dice_coef"], label="train F1 Score")
-    ax_dice.plot(history.epoch, history.history["val_dice_coef"], label="validation F1 Score")
+    fig, (ax_dice, ax_jacc) = plt.subplots(1, 2, figsize=(32,16))
+    ax_dice.plot(history.epoch, history.history["dice_coef"], label="train dice_coef")
+    ax_dice.plot(history.epoch, history.history["val_dice_coef"], label="validation dice_coef")
     ax_dice.legend()
     
     ax_jacc.plot(history.epoch, history.history["jaccard"], label="train jaccard")
@@ -40,7 +40,7 @@ def plot_dice_jacc_history(history, experiment_name, graph_path):
     ax_jacc.legend()
     
     #fig.tight_layout()
-    plt.suptitle('F1 score and IoU graphs for ' + str(experiment_name), fontweight='regular', fontsize=30)
-    plt.savefig(graph_path + '/' + str(experiment_name) + '_f1_iou' + '.png', format='png', dpi = 300)
+    plt.suptitle('Dice Coefficient and IoU For ' + str(experiment_name), fontweight='regular', fontsize=34)
+    plt.savefig(graph_path + '/' + str(experiment_name) + '_dc_iou' + '.png', format='png', dpi = 200)
     plt.close()
     return("DONE!")
