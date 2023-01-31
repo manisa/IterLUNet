@@ -231,8 +231,8 @@ def IterLUNet(input_filters, height, width, n_channels):
 		filters*2, (2, 2), strides=(2, 2), padding='same')(block34), block3], axis=3)
 	level3 = iterLBlock(up32, filters*2, name = 'iterLBlock14')
 
-	conv10 = Conv2D(1, (1, 1), padding="same", activation="sigmoid", name='visualized_layer')(level3)
-	model = Model(inputs=[inputs], outputs=[conv10])
+	out = Conv2D(1, (1, 1), padding="same", activation="sigmoid", name='visualized_layer')(level3)
+	model = Model(inputs=[inputs], outputs=[out])
 	return model
 
 def main():

@@ -10,7 +10,6 @@ __pycache__/
 models/
 dataset/
 predictions/
-results/
 drafts/
 notebooks/
 lib/evaluateAll.py
